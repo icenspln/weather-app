@@ -1,0 +1,52 @@
+.accordion {
+  min-width: 250px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion__button {
+  background-color: transparent;
+  color: var(--color-dark);
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(239, 239, 239);
+  border-radius: 15px;
+}
+
+.accordion__button:hover {
+  background-color: rgb(239, 239, 239);
+}
+
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  transform: rotate(45deg);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
